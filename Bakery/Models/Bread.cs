@@ -7,7 +7,7 @@ namespace Bake.Loaves
 	{
 		public string BreadType { get; set; }
 		public int BreadPrice { get; set; }
-		public static List<Bread> BreadOrder = new List<Bread> { get; set; }
+		private static List<Bread> _breadOrder = new List<Bread> {};
 		public Bread(string breadType, int breadPrice)
 		{
 			BreadType = breadType;
