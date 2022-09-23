@@ -101,8 +101,13 @@ namespace Bake
 		public static void OrderBread(string bread, int price)
 		{
 			Console.WriteLine("Input the quantity you would like:");
-			int userinput = Int32.Parse(Console.ReadLine());
-			for (int i=0; i < userinput; i++)
+			int userInput = 0;
+			if (Int32.TryParse(Console.ReadLine(), out userInput) == false)
+			{
+				Console.WriteLine("Please input a number.");
+				Main();
+			}
+			for (int i=0; i < userInput; i++)
 			{
 				Bread loaf = new Bread(bread, price);
 			}
@@ -126,8 +131,13 @@ namespace Bake
 		public static void OrderPastry(string pastry, int price)
 		{
 			Console.WriteLine("Input the quantity you would like:");
-			int userinput = Int32.Parse(Console.ReadLine());
-			for (int i=0; i < userinput; i++)
+			int userInput = 0;
+			if (Int32.TryParse(Console.ReadLine(), out userInput) == false)
+			{
+				Console.WriteLine("Please input a number.");
+				Main();
+			}
+			for (int i=0; i < userInput; i++)
 			{
 				Pastry cake = new Pastry(pastry, price);
 			}
