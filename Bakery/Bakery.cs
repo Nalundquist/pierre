@@ -14,8 +14,9 @@ namespace Bake
 			Console.WriteLine("---------------------------");
 			Console.WriteLine("Breads - $ 5 ||| Pastries - $ 2");
 			Console.WriteLine("Deals: ");
-			Console.WriteLine("- Buy Two Loaves of Bread, Get One Free!");
-			Console.WriteLine("- Buy Two Pastries, get one half off!");
+			Console.WriteLine("- Buy two loaves of bread, get one Free!");
+			Console.WriteLine("- Buy two pastries, get one half off!");
+			Console.WriteLine("- 25% off bulk orders of 10 or more loaves of bread *or* 25 or more pastries!");
 			Console.WriteLine("Browse our (B)read or (P)astry selections (or any other entry to exit)");
 			string userinput1 = Console.ReadLine().ToLower();
 			if (userinput1 == "bread" || userinput1 == "b")
@@ -106,7 +107,6 @@ namespace Bake
 			{
 				Bread loaf = new Bread(bread, price);
 			}
-			Console.WriteLine("Your current total is $" + (Bread.BreadTab() + Pastry.PastryTab()) + ".");
 			Console.WriteLine("Would you like to (O)rder more or (C)heckout?");
 			string userInput4 = Console.ReadLine().ToLower();
 			if (userInput4 == "checkout" || userInput4 == "check out" || userInput4 == "c")
@@ -151,14 +151,20 @@ namespace Bake
 
 		public static void Checkout()
 		{
-			Console.WriteLine("Your final total is $" + (Bread.BreadTab() + Pastry.PastryTab()) + ".");
-				Console.WriteLine("Enter a name for your order:");
-				string userName = Console.ReadLine();
-				Console.WriteLine("Thanks very much for your order, " + userName + ".");
-				Console.WriteLine("Pick up your order at:");
-				Console.WriteLine("Pierre's Bakery");
-				Console.WriteLine("123 Fake St NE");
-				Console.WriteLine("Newark, NJ 12345");
+			float finalPrice = (Bread.BreadTab() + Pastry.PastryTab());
+			if (Bread.Count >= 10 || Pastries.Count >= 25)
+			{
+				finalPrice *= .75;
+			}
+			finalPrice.ToString("n2");
+			Console.WriteLine("Your final total is $" + finalPrice + ".");
+			Console.WriteLine("Enter a name for your order:");
+			string userName = Console.ReadLine();
+			Console.WriteLine("Thanks very much for your order, " + userName + ".");
+			Console.WriteLine("Pick up your order at:");
+			Console.WriteLine("Pierre's Bakery");
+			Console.WriteLine("123 Fake St NE");
+			Console.WriteLine("Newark, NJ 12345");
 		}
 	}
 }
