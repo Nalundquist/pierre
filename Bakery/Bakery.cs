@@ -17,28 +17,28 @@ namespace Bake
 			Console.WriteLine("- Buy Two Loaves of Bread, Get One Free!");
 			Console.WriteLine("- Buy Two Pastries, get one half off!");
 			Console.WriteLine("Browse our (B)read or (P)astry selections (or any other entry to exit)");
-			string userinput1 = Console.ReadLine().ToLower();
-			if (userinput1 == "bread" || userinput1 == "b")
+			string userInput = Console.ReadLine().ToLower();
+			if (userInput == "bread" || userInput == "b")
 			{
 				Console.WriteLine("This Week's Breads");
 				Console.WriteLine("- (P)umpernickel");
 				Console.WriteLine("- (O)live");
 				Console.WriteLine("- (W)heat");
 				Console.WriteLine("- (C)hallah");
-				string userinput2 = Console.ReadLine().ToLower();
-				if (userinput2 == "pumpernickel" || userinput2 == "p")
+				string userInput2 = Console.ReadLine().ToLower();
+				if (userInput2 == "pumpernickel" || userInput2 == "p")
 				{
 					OrderBread("Pumpernickel", 5);
 				}
-				else if (userinput2 == "olive" || userinput2 == "o")
+				else if (userInput2 == "olive" || userInput2 == "o")
 				{
 					OrderBread("Olive", 5);
 				}
-				else if (userinput2 == "wheat" || userinput2 == "w")
+				else if (userInput2 == "wheat" || userInput2 == "w")
 				{
 					OrderBread("Wheat", 5);
 				}
-				else if (userinput2 == "challah" || userinput2 == "c")
+				else if (userInput2 == "challah" || userInput2 == "c")
 				{
 					OrderBread("Challah", 5);
 				}
@@ -47,27 +47,27 @@ namespace Bake
 					Main();
 				}
 			}
-			else if (userinput1 == "Pastry" || userinput1 == "p")
+			else if (userInput == "Pastry" || userInput == "p")
 			{
 				Console.WriteLine("This Week's Pastrys");
 				Console.WriteLine("- (E)clair");
 				Console.WriteLine("- (C)roissant");
 				Console.WriteLine("- Cream (P)uff");
 				Console.WriteLine("- (M)acaron");
-				string userinput2 = Console.ReadLine().ToLower();
-				if (userinput2 == "eclair" || userinput2 == "e")
+				string userInput2 = Console.ReadLine().ToLower();
+				if (userInput2 == "eclair" || userInput2 == "e")
 				{
 					OrderPastry("Eclair", 2);
 				}
-				else if (userinput2 == "croissant" || userinput2 == "c")
+				else if (userInput2 == "croissant" || userInput2 == "c")
 				{
 					OrderPastry("Croissant", 2);
 				}
-				else if (userinput2 == "cream puff" || userinput2 == "creampuff" || userinput2 == "p")
+				else if (userInput2 == "cream puff" || userInput2 == "creampuff" || userInput2 == "p")
 				{
 					OrderPastry("Cream Puff", 2);
 				}
-				else if (userinput2 == "macaron" || userinput2 == "m")
+				else if (userInput2 == "macaron" || userInput2 == "m")
 				{
 					OrderPastry("Macaron", 2);
 				}
