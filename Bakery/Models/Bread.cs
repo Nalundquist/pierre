@@ -3,33 +3,46 @@ using System.Collections.Generic;
 
 namespace Bake.Loaves
 {
-	public class Bread
+	abstract class BakedGood
 	{
-		public string BreadType { get; set; }
-		public int BreadPrice { get; set; }
-		private static List<Bread> _breadOrder = new List<Bread> {};
-		public Bread(string breadType, int breadPrice)
+		public string BakedType { get; set; }
+		public int BakedPrice { get; set; }
+		public Order()
 		{
-			BreadType = breadType;
-			BreadPrice = breadPrice;
-			_breadOrder.Add(this);
+			List<Item> BakedGoods = new List<Item> {};
 		}
-		public static int BreadTab()
+
+		public static int OrderTab(List order)
 		{
 			int orderPrice = 0;
-			for (int i = 2; i < _breadOrder.Count; i += 3)
+			foreach (BakedGood good in order)
 			{
-				_breadOrder[i].BreadPrice = 0;
-			}
-			foreach (Bread bread in _breadOrder)
-			{
-			orderPrice += bread.BreadPrice;
+			orderPrice += good.BakedPrice;
 			}
 			return orderPrice;
 		}
+
 		public static void ClearOrder()
 		{
-			_breadOrder.Clear();
+			Order.Clear();
+		}
+	}
+
+	public class Bread : BakedGood
+	{
+		Order breadOrder = new Order<Bread> {};
+		public Bread(string breadType, int breadPrice)
+		{
+			BakedType = breadType;
+			BakedPrice = breadPrice;
+			breadOrder.Add(this);
+		}
+		public static int BreadTab(){
+			for (int i = 2; i < breadOrder.Count; i += 3)
+			{
+				breadOrder[i].BakedPrice = 0;
+			}
+			return OrderTab(breadOrder);
 		}
 	}
 }

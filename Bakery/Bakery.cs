@@ -133,7 +133,7 @@ namespace Bake
 			}
 			Console.WriteLine("Would you like to (O)rder more or (C)heckout?");
 			string userInput4 = Console.ReadLine().ToLower();
-			if (userInput4 == "checkout" || userInput4 == "c")
+			if (userInput4 == "checkout" || userInput4 == "check out" || userInput4 == "c")
 			{
 				Checkout();
 			}
