@@ -28,11 +28,11 @@ namespace Bake
 				string userInput2 = Console.ReadLine().ToLower();
 				if (userInput2 == "pumpernickel" || userInput2 == "p")
 				{
-					OrderBread("Pumpernickel", 5);
+					OrderBread("Pumpernickel", 6);
 				}
 				else if (userInput2 == "olive" || userInput2 == "o")
 				{
-					OrderBread("Olive", 5);
+					OrderBread("Olive", 6);
 				}
 				else if (userInput2 == "wheat" || userInput2 == "w")
 				{
@@ -40,7 +40,7 @@ namespace Bake
 				}
 				else if (userInput2 == "challah" || userInput2 == "c")
 				{
-					OrderBread("Challah", 5);
+					OrderBread("Challah", 7);
 				}
 				else {
 					Console.WriteLine("Please input a type of bread.");
@@ -161,13 +161,13 @@ namespace Bake
 		public static void Checkout()
 		{
 			Console.WriteLine("Your final total is $" + (Bread.BreadTab() + Pastry.PastryTab()) + ".");
-				Console.WriteLine("Enter a name for your order:");
-				string userName = Console.ReadLine();
-				Console.WriteLine("Thanks very much for your order, " + userName + ".");
-				Console.WriteLine("Pick up your order at:");
-				Console.WriteLine("Pierre's Bakery");
-				Console.WriteLine("123 Fake St NE");
-				Console.WriteLine("Newark, NJ 12345");
+			Console.WriteLine("Enter a name for your order:");
+			string userName = Console.ReadLine();
+			Console.WriteLine("Thanks very much for your order, " + userName + ".");
+			Console.WriteLine("Pick up your order at:");
+			Console.WriteLine("Pierre's Bakery");
+			Console.WriteLine("123 Fake St NE");
+			Console.WriteLine("Newark, NJ 12345");
 		}
 	}
 }
